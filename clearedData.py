@@ -1,6 +1,6 @@
 import pandas
 
-from rowData import RowData
+from rowDataFromFile import RowDataFromFile
 
 
 class ClearedData:
@@ -24,8 +24,9 @@ class ClearedData:
 
 if __name__ == '__main__':
     fileName: str = "/home/dimitri/Загрузки/601285.json"
-    rowData: RowData = RowData(file_name=fileName)  # object must start from lower-case letter
+    rowData: RowDataFromFile = RowDataFromFile(file_name=fileName)  # object must start from lower-case letter
     row_data_json: dict = rowData.get_json()
     clearedData: ClearedData = ClearedData(row_data_json=row_data_json)  # object must start from lower-case letter
+
     dfOut: pandas.DataFrame = clearedData.get_cleared_data()
     pass  # Press Ctrl+8 to toggle the breakpoint.

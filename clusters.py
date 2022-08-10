@@ -1,10 +1,12 @@
 import numpy
 import pandas
+import argparse
 from sklearn.cluster import DBSCAN
 
 from clearedData import ClearedData
 from distanceMatrix import DistanceMatrix
-from rowData import RowData
+from rowDataFromFile import RowDataFromFile
+from rowDataFromUrl import RowDataFromUrl
 
 
 class Clusters:
@@ -33,12 +35,18 @@ class Clusters:
 
 
 if __name__ == '__main__':
-    fileName: str = "/home/dimitri/Загрузки/601285.json"
-    rowData: RowData = RowData(file_name=fileName)  # object must start from lower-case letter
-    row_data_json: dict = rowData.get_json()
-    clearedData: ClearedData = ClearedData(row_data_json=row_data_json)  # object must start from lower-case letter
-    dfClearedData: pandas.DataFrame = clearedData.get_cleared_data()
-    distanceMatrix: DistanceMatrix = DistanceMatrix(df_cleared_data=dfClearedData)  # object must start from lower-case letter
+    parser = argparse.ArgumentParser(description='cl parameters about data source')
+    parser.add_argument('--path', '-p',
+                        dest="path",
+                        type=str,
+                        help="path to JSON-result of the survey")
+    args = parser.parse_args()
+    if args.path is None:
+        rowData: RowDataFromUrl = RowDataFromUrl(url="https://raw.githubusercontent.com/DimitriBolt/clusterAnalysis/master/data/601285.json")  # object must start from lower-case letter
+    else:
+        rowData: RowDataFromFile = RowDataFromFile(file_name=args.path)
+    clearedData: ClearedData = ClearedData(row_data_json=rowData.get_json())  # object must start from lower-case letter
+    distanceMatrix: DistanceMatrix = DistanceMatrix(cleared_data=clearedData)  # object must start from lower-case letter
     clusters: Clusters = Clusters(distance_matrix=distanceMatrix)  # object must start from lower-case letter
 
     a: numpy.ndarray = clusters.get_labels()
