@@ -1,0 +1,84 @@
+{"data":[
+            {
+            "answer.age": 22,
+            "answer.gender": "M",
+            "answer.civil_status": "SINGLE",
+            "answer.salary": 18000,
+            "answer.has_children": "False",
+            "answer.purchaser_type": "LOW_PURCHASER"
+            },
+            {
+            "answer.age": 25,
+            "answer.gender": "M",
+            "answer.civil_status": "SINGLE",
+            "answer.salary": 23000,
+            "answer.has_children": "False",
+            "answer.purchaser_type": "LOW_PURCHASER"
+            },
+            {
+            "answer.age": 30,
+            "answer.gender": "F",
+            "answer.civil_status": "SINGLE",
+            "answer.salary": 27000,
+            "answer.has_children": "False",
+            "answer.purchaser_type": "LOW_PURCHASER"
+            },
+            {
+            "answer.age": 38,
+            "answer.gender": "F",
+            "answer.civil_status": "MARRIED",
+            "answer.salary": 32000,
+            "answer.has_children": "True",
+            "answer.purchaser_type": "HEAVY_PURCHASER"
+            },
+            {
+            "answer.age": 42,
+            "answer.gender": "F",
+            "answer.civil_status": "MARRIED",
+            "answer.salary": 34000,
+            "answer.has_children": "True",
+            "answer.purchaser_type": "HEAVY_PURCHASER"
+            },
+            {
+            "answer.age": 47,
+            "answer.gender": "M",
+            "answer.civil_status": "SINGLE",
+            "answer.salary": 20000,
+            "answer.has_children": "False",
+            "answer.purchaser_type": "LOW_PURCHASER"
+            },
+            {
+            "answer.age": 55,
+            "answer.gender": "M",
+            "answer.civil_status": "MARRIED",
+            "answer.salary": 40000,
+            "answer.has_children": "False",
+            "answer.purchaser_type": "MEDIUM_PURCHASER"
+            },
+            {
+            "answer.age": 62,
+            "answer.gender": "M",
+            "answer.civil_status": "DIVORCED",
+            "answer.salary": 42000,
+            "answer.has_children": "False",
+            "answer.purchaser_type": "MEDIUM_PURCHASER"
+            },
+            {
+            "answer.age": 61,
+            "answer.gender": "M",
+            "answer.civil_status": "MARRIED",
+            "answer.salary": 25000,
+            "answer.has_children": "False",
+            "answer.purchaser_type": "MEDIUM_PURCHASER"
+            },
+            {
+            "answer.age": 90,
+            "answer.gender": "M",
+            "answer.civil_status": "DIVORCED",
+            "answer.salary": 70000,
+            "answer.has_children": "True",
+            "answer.purchaser_type": "LOW_PURCHASER"
+            }
+        ]
+}
+
