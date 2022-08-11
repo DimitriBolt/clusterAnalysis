@@ -1,3 +1,5 @@
+from os.path import expanduser, join
+
 import pandas
 import json
 import requests
@@ -29,7 +31,7 @@ class RowDataFromFile:
 
 
 if __name__ == '__main__':
-    fileName: str = "/home/dimitri/Загрузки/601285.json"
+    fileName: str = join(expanduser("~"), "Downloads", "601285.json")
     rowData: RowDataFromFile = RowDataFromFile(file_name=fileName)  # object must start from lower-case letter
 
     dictOut: pandas.DataFrame = rowData.get_json()

@@ -5,7 +5,7 @@ import json
 import requests
 
 
-class RowDataFromUrl:
+class RowDataFromURL:
     # хранит в себе данные из JSON в формате DataFrame
     #  Initializer выполняется перед! основной программой.
     #  Private Instance or static Class attribute. Переменные должны начинаться с двух подчеркиваний.
@@ -29,7 +29,7 @@ class RowDataFromUrl:
 
 if __name__ == '__main__':
     URL: str = "https://raw.githubusercontent.com/DimitriBolt/clusterAnalysis/master/data/601285.json"
-    rowData: RowDataFromUrl = RowDataFromUrl(url=URL)  # object must start from lower-case letter
+    rowData: RowDataFromURL = RowDataFromURL(url=URL)  # object must start from lower-case letter
 
     dictOut: dict = rowData.get_json()
 

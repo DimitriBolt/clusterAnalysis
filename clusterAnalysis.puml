@@ -7,28 +7,39 @@ package "clusterAnalysis" {
     "data": [{"answer":{"q1":{"a5":{"x":true},"a2":{"x":false},"a1":{"x":false},"a3":{"x":false},"a4":{"x":false},"a6":{"x":false}},"q2":{"a4":{"x":true},"a1":{"x":false},"a2":{"x":false},"a3":{"x":false}},"q3":{"t":"Just not Interested"},"q9":{"b2":{"a1":{"x":false},"a2":{"x":true}},"b1":{"a1":{"x":false},"a2":{"x":true}}},"q10":{"b5":{"a3":{"x":true}},"b1":{"a3":{"x":true}},"b7":{"a3":{"x":true}},"b2":{"a4":{"x":true}},"b6":{"a3":{"x":true}},"b3":{"a3":{"x":true}},"b4":{"a3":{"x":true}}},"q11":{"a4":{"x":true},"a2":{"x":false},"a1":{"x":false},"a3":{"x":false}},"q12":{"a1":{"x":true},"a2":{"x":false}},"q15":{"a4":{"x":true},"a1":{"x":false},"a2":{"x":false},"a3":{"x":false}},"q16":{"a1":{"x":true},"a2":{"x":false}}}}, "answer", "answer"]
     }
     together {
-        class RowData{
-            {method}-__init__(JSON)
+        class RowDataFromURL{
+            {field}-data: dict
+            {method}-__init__(url: str = "aytm.com")
         }
         'Зависит от ..>
-        RowData::__init__ ..> JSON
+        RowDataFromURL::__init__ ..> JSON
+
+        class RowDataFromFile{
+            {field}-data: dict
+            {method}-__init__(file_name: str = "601285.json")
+        }
+        'Зависит от ..>
+        RowDataFromFile::__init__ ..> JSON
 
         class ClearedData{
-            {method}-__init__(rowData: RowData)
+            {field}-cleared_data: DataFrame
+            {method}-__init__(row_data_json: dict)
         }
         'Зависит от ..>
-        ClearedData::__init__ ..> RowData
+        ClearedData::__init__ ..> RowDataFromFile
+        ClearedData::__init__ ..> RowDataFromURL
 
         class DistanceMatrix{
+            {field}-distanceMatrix: ndarray (n:n)
             {method}-__init__(clearedData: ClearedData)
         }
         'Зависит от ..>
         DistanceMatrix::__init__ ..> ClearedData
 
         class Clusters {
-            {field}-distanceMatrix: DistanceMatrix
+            {field}-clusterLabels: ndarray (n)
             {method}-__init__(distance_matrix: DistanceMatrix)
-            {method}~getCluster() -> dict
+            {method}~get_cluster_labels() -> ndarray
         }
         'Зависит от ..>
         Clusters::__init__  ..> DistanceMatrix
@@ -36,6 +47,9 @@ package "clusterAnalysis" {
     'JSON -[hidden]-> Clusters
     JSON -[hidden]-> DistanceMatrix
     JSON -[hidden]-> ClearedData
+    JSON -[hidden]-> RowDataFromURL
+    JSON -[hidden]-> RowDataFromFile
+
 
 }
 @enduml
