@@ -10,4 +10,6 @@
 <h1>How to install</h1>
   clone git...
   python ....
+<h1>Refrences</h1>
+https://towardsdatascience.com/clustering-on-numerical-and-categorical-features-6e0ebcf1cbad
     
