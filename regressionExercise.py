@@ -61,13 +61,10 @@ if __name__ == '__main__':
     # Creating a dictionary with the data
     dictionary = {"age": [22, 25, 30, 38, 42, 47, 55, 62, 61, 90],
                   "gender": ["M", "M", "F", "F", "F", "M", "M", "M", "M", "M"],
-                  "civil_status": ["SINGLE", "SINGLE", "SINGLE", "MARRIED", "MARRIED", "SINGLE", "MARRIED", "DIVORCED",
-                                   "MARRIED", "DIVORCED"],
+                  "civil_status": ["SINGLE", "SINGLE", "SINGLE", "MARRIED", "MARRIED", "SINGLE", "MARRIED", "DIVORCED", "MARRIED", "DIVORCED"],
                   "salary": [18000, 23000, 27000, 32000, 34000, 20000, 40000, 42000, 25000, 70000],
                   "has_children": [False, False, False, True, True, False, False, False, False, True],
-                  "purchaser_type": ["LOW_PURCHASER", "LOW_PURCHASER", "LOW_PURCHASER", "HEAVY_PURCHASER",
-                                     "HEAVY_PURCHASER", "LOW_PURCHASER", "MEDIUM_PURCHASER", "MEDIUM_PURCHASER",
-                                     "MEDIUM_PURCHASER", "LOW_PURCHASER"]}
+                  "purchaser_type": ["LOW_PURCHASER", "LOW_PURCHASER", "LOW_PURCHASER", "HEAVY_PURCHASER", "HEAVY_PURCHASER", "LOW_PURCHASER", "MEDIUM_PURCHASER", "MEDIUM_PURCHASER", "MEDIUM_PURCHASER", "LOW_PURCHASER"]}
 
     # Creating a Pandas DataFrame from the dictionary
     dataframe = pd.DataFrame.from_dict(dictionary)

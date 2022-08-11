@@ -26,6 +26,12 @@ if __name__ == '__main__':
     fileName: str = "/home/dimitri/Загрузки/601285.json"
     rowData: RowDataFromFile = RowDataFromFile(file_name=fileName)  # object must start from lower-case letter
     row_data_json: dict = rowData.get_json()
+    # it is not! numerical variables, there are categorized features
+    # K-means,
+    # https://en.wikipedia.org/wiki/Ward%27s_method,
+    # https://en.wikipedia.org/wiki/Cluster_analysis#Centroid-based_clustering,
+    # https://en.wikipedia.org/wiki/Hierarchical_clustering
+    # do not work
     clearedData: ClearedData = ClearedData(row_data_json=row_data_json)  # object must start from lower-case letter
 
     dfOut: pandas.DataFrame = clearedData.get_cleared_data()

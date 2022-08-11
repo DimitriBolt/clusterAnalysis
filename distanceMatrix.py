@@ -15,10 +15,12 @@ class DistanceMatrix:
     def __init__(self, cleared_data: ClearedData) -> None:
         self.__dfClearedCata = cleared_data.get_cleared_data()
         self.__DistanceMatrix = self.__gower_distance(self.__dfClearedCata)
+        pass
 
     # Methods
     def __gower_distance(self, dataframe: pandas.DataFrame) -> pandas.DataFrame:
         return gower.gower_matrix(dataframe)
+
 
     # Accessor( = getter) methods
     def get_distance_matrix(self) -> pandas.DataFrame:
